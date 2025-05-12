@@ -130,3 +130,93 @@ idade := 30         // int
 nome := "João"      // string
 ativo := true       // bool
 ```
+
+## 🧪 Testes
+
+### ▶️ Rodar testes
+
+```bash
+go test
+```
+
+- Executa todos os testes no pacote atual.
+
+```bash
+go test ./...
+```
+
+- Executa testes em todos os subdiretórios.
+
+---
+
+### 🧪 Rodar testes com detalhes
+
+```bash
+go test -v
+```
+
+- Mostra a execução de cada teste (modo verbose).
+
+```bash
+go test -run NomeDoTeste
+```
+
+- Executa apenas o teste que contém `NomeDoTeste`.
+
+---
+
+### 📈 Verificar cobertura
+
+```bash
+go test -cover
+```
+
+- Mostra a porcentagem de cobertura no terminal.
+
+```bash
+go test -coverprofile=cobertura.out
+```
+
+- Gera um arquivo com os dados de cobertura.
+
+```bash
+go tool cover -html=cobertura.out
+```
+
+- Abre um relatório visual da cobertura no navegador.
+
+---
+
+### 🧪 Testes com benchmarks
+
+```bash
+go test -bench=.
+```
+
+- Executa benchmarks do pacote atual.
+
+---
+
+### 🧪 Criar arquivo de teste
+
+- Nome do arquivo: `nome_arquivo_test.go`
+- Estrutura básica:
+
+```go
+func TestNome(t *testing.T) {
+    resultado := Soma(2, 3)
+    esperado := 5
+
+    if resultado != esperado {
+        t.Errorf("esperado %d, obtido %d", esperado, resultado)
+    }
+}
+```
+
+---
+
+### 🧹 Limpar dependências não utilizadas
+
+```bash
+go mod tidy
+```
