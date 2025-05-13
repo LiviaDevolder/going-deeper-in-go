@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 style="color: red">Home Page</h2>
+    <marquee><h4>Welcome, {{ .Name }}!</h4></marquee>
+    <button id="button">Click me!</button>
+    <p id="paragraph"></p>
+
+    <script>
+      var button = document.getElementById("button");
+      var paragraph = document.getElementById("paragraph");
+
+      button.onclick = function () {
+        paragraph.textContent = "You've clicked";
+      };
+    </script>
+  </body>
+</html>
